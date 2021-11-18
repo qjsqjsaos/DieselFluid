@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">DieselFluid</string>
+    <string name="navi_item_first">가까운 주유소</string>
+    <string name="navi_tiem_second">요소수 현황</string>
+    <string name="navi_item_third">지도로 보기</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

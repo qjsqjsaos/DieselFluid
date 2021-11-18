@@ -1,7 +1,10 @@
-package com.example.dieselfluid.repository.model;
+package com.example.dieselfluid.model;
 
 public class UserModel {
-    private String myLatitude, myLongitude; //위도 //경도
+
+    private String myLatitude; //위도
+
+    private String myLongitude; //경도
 
     public UserModel(String myLatitude, String myLongitude) {
         this.myLatitude = myLatitude;
