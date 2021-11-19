@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel;
 import com.example.dieselfluid.model.UserModel;
 
 
-public class DieselViewModel extends ViewModel {
+public class HomeViewModel extends ViewModel {
     private MutableLiveData<UserModel> user;
 
     public LiveData<UserModel> getUsers() {
