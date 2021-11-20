@@ -8,7 +8,6 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.dieselfluid.model.GasStationModel;
-import com.example.dieselfluid.view.activity.HomeActivity;
 import com.example.dieselfluid.viewmodel.repository.api.RetrofitAPI;
 import com.example.dieselfluid.viewmodel.repository.api.RetrofitClient;
 import com.example.dieselfluid.viewmodel.repository.api.dto.DieselData;
@@ -55,16 +54,16 @@ public class HomeViewModel extends ViewModel {
                         String address = data[i].getAddress();
                         String operatingTime = data[i].getOperatingTime();
                         String price = data[i].getPrice();
-                        String gasStationName = data[i].getGasStationName();
+                        String getDetailAddress = data[i].getDetailAddress();
                         String dieselStock = data[i].getDieselStock();
                         String phoneNumber = data[i].getPhoneNumber();
                         String updateDate = data[i].getUpdateDate();
 
                         insertData.add(new GasStationModel(
-                                address,
+                                getDetailAddress,
                                 operatingTime,
                                 price,
-                                gasStationName,
+                                address,
                                 dieselStock,
                                 phoneNumber,
                                 updateDate

@@ -25,7 +25,7 @@ public class DieselData {
 
     @SerializedName("명칭")
     @Expose
-    private String gas_station_name;
+    private String detail_address;
 
     @SerializedName("위도")
     @Expose
@@ -79,12 +79,12 @@ public class DieselData {
         this.price = price;
     }
 
-    public String getGasStationName() {
-        return gas_station_name;
+    public String getDetailAddress() {
+        return detail_address;
     }
 
-    public void setGasStationName(String gasStationName) {
-        this.gas_station_name = gasStationName;
+    public void setDetailAddress(String detail_address) {
+        this.detail_address = detail_address;
     }
 
     public String getLatitude() {
@@ -130,6 +130,6 @@ public class DieselData {
     @NonNull
     @Override
     public String toString() {
-        return "ClassPojo [code = " + code + ", address = " + address + ", operating_time = " + operating_time + ", price = " + price + ", gas_station_name = " + gas_station_name + ", latitude = " + latitude + ", diesel_stock = " + diesel_stock + ", phone_number = " + phone_number + ", update_date = " + update_date + ", longitude = " + longitude + "]";
+        return "ClassPojo [code = " + code + ", address = " + address + ", operating_time = " + operating_time + ", price = " + price + ", detail_address = " + detail_address + ", latitude = " + latitude + ", diesel_stock = " + diesel_stock + ", phone_number = " + phone_number + ", update_date = " + update_date + ", longitude = " + longitude + "]";
     }
 }
