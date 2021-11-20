@@ -1,43 +1,38 @@
 package com.example.dieselfluid.model;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
-
-import java.util.Map;
-
 public class GasStationModel {
-    private String address;
+    private String location;
     private String operating_time;
     private String price;
-    private String gas_station_name;
+    private String detail_address;
     private String diesel_stock;
     private String phone_number;
     private String update_date;
 
     public GasStationModel(
-            String address,
+            String location,
             String operating_time,
             String price,
-            String gas_station_name,
+            String detail_address,
             String diesel_stock,
             String phone_number,
             String update_date
     ) {
-        this.address = address;
+        this.location = location;
         this.operating_time = operating_time;
         this.price = price;
-        this.gas_station_name = gas_station_name;
+        this.detail_address = detail_address;
         this.diesel_stock = diesel_stock;
         this.phone_number = phone_number;
         this.update_date = update_date;
     }
 
-    public String getAddress() {
-        return address;
+    public String getLocation() {
+        return location;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public String getOperatingTime() {
@@ -56,12 +51,12 @@ public class GasStationModel {
         this.price = price;
     }
 
-    public String getGasStationName() {
-        return gas_station_name;
+    public String getDetailAddress() {
+        return detail_address;
     }
 
-    public void setGasStationName(String gas_station_name) {
-        this.gas_station_name = gas_station_name;
+    public void setDetailAddress(String detail_address) {
+        this.detail_address = detail_address;
     }
 
     public String getDieselStock() {
