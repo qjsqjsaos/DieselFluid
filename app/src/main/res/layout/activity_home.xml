@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:weightSum="10"
+    android:orientation="vertical"
     android:layout_height="match_parent">
 
-    <FrameLayout
-        android:id="@+id/home_frame_layout"
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/home_search_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="60dp" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="30dp"
+        app:iconifiedByDefault="false"
+        app:queryHint="검색어를 입력하시오" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/home_bottom_navi"
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/home_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="0dp"
+        android:layout_weight="9"
         android:layout_gravity="bottom"
-        app:itemIconSize="28dp"
-        app:menu="@menu/bottom_navi_menu" />
+        />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>
 
