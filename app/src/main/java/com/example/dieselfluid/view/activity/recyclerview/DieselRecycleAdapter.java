@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.dieselfluid.R;
 import com.example.dieselfluid.databinding.RecycleListItemBinding;
 import com.example.dieselfluid.model.GasStationModel;
-import com.example.dieselfluid.viewmodel.DetailViewModel;
 
 import java.util.ArrayList;
 
@@ -23,7 +22,6 @@ public class DieselRecycleAdapter extends RecyclerView.Adapter<DieselRecycleAdap
         implements Filterable, OnItemClickListener {
     private ArrayList<GasStationModel> gasStationList;
     private ArrayList<GasStationModel> gasStationListCopy;
-    private DetailViewModel detailViewModel;
     OnItemClickListener listener;
     private Context context;
 
