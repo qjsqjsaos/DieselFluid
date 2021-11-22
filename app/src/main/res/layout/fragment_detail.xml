@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".view.activity.DetailActivity"
     tools:ignore="UselessParent">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="#000" />
+        android:background="@drawable/ready_image" />
 
     <LinearLayout
+        android:id="@+id/address_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -25,15 +25,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/detail_address"
-            android:textSize="25sp" />
+            android:textSize="@dimen/detail_title_size" />
 
         <TextView
             android:id="@+id/detail_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/temporary_detail_address"
-            android:textSize="22sp" />
-
+            android:textSize="@dimen/detail_description_size" />
 
     </LinearLayout>
 
@@ -48,17 +47,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="운영 시간 :"
-            android:textSize="25sp" />
+            android:text="@string/operating_time"
+            android:textSize="@dimen/detail_title_size"  />
 
         <TextView
             android:id="@+id/operating_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="22sp" />
+            android:textSize="@dimen/detail_description_size" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/phone_number_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -70,13 +70,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="연락처 :"
-            android:textSize="25sp" />
+            android:textSize="@dimen/detail_title_size"/>
 
         <TextView
             android:id="@+id/phone_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="22sp" />
+            android:textSize="@dimen/detail_description_size"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -91,13 +92,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="갱신 날짜 :"
-            android:textSize="25sp" />
+            android:textSize="@dimen/detail_title_size" />
 
         <TextView
             android:id="@+id/update_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="22sp" />
+            android:textSize="@dimen/detail_description_size"/>
     </LinearLayout>
 
     <TableLayout
@@ -163,6 +164,44 @@
 
         </TableRow>
     </TableLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="참고해주세요!"
+            android:textSize="20sp"
+            android:layout_marginBottom="10dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="요소수 가격 정보를 얻기 힘들어, 이 점 유의 바랍니다."
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="요소수 양은 12시에 자료가 14~15시에 갱신이 되고,"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="18시에 자료가 20~21시에 갱신이 됩니다."
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이 또한 정확한 시간이 아닐 수 있다는 점 유의 바랍니다."
+            />
+
+    </LinearLayout>
 
 
 </LinearLayout>
