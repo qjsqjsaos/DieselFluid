@@ -1,0 +1,8 @@
+
+S
+java:S1128"1Remove this unused import 'android.widget.Toast'.(©›ïÍúÿÿÿÿ8ÅÏ›Ô/
+Z
+java:S1128"8Remove this unused import 'androidx.lifecycle.LiveData'.(ß„İŞşÿÿÿÿ8ÅÏ›Ô/
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ÅÏ›Ô/
+Tsecrets:S6290"6Make sure this AWS Secret Access Key is not disclosed.(¢œÚßüÿÿÿÿ
