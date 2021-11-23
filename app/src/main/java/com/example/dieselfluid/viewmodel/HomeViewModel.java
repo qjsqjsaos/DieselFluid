@@ -12,6 +12,7 @@ import com.example.dieselfluid.viewmodel.repository.api.RetrofitAPI;
 import com.example.dieselfluid.viewmodel.repository.api.RetrofitClient;
 import com.example.dieselfluid.viewmodel.repository.api.dto.DieselData;
 import com.example.dieselfluid.viewmodel.repository.api.dto.DieselDataClass;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
 
 import java.util.ArrayList;
 import java.util.List;

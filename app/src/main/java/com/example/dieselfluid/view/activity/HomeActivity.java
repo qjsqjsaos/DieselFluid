@@ -1,40 +1,25 @@
 package com.example.dieselfluid.view.activity;
 
-import static java.util.Locale.filter;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
-import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.Manifest;
-import android.annotation.SuppressLint;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
 
 import com.example.dieselfluid.R;
 import com.example.dieselfluid.databinding.ActivityHomeBinding;
-import com.example.dieselfluid.model.GasStationModel;
-import com.example.dieselfluid.view.activity.recyclerview.DieselRecycleAdapter;
-import com.example.dieselfluid.view.activity.recyclerview.OnItemClickListener;
 import com.example.dieselfluid.view.fragment.DetailFragment;
 import com.example.dieselfluid.view.fragment.MainFragment;
-import com.example.dieselfluid.viewmodel.HomeViewModel;
-import com.google.android.ads.mediationtestsuite.viewmodels.ViewModelFactory;
-
-import java.util.Objects;
+import com.google.android.gms.ads.AdError;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
 
 public class HomeActivity extends AppCompatActivity {
@@ -86,6 +71,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         }
     }
+
 
     public void showMainFrag() {
         if(mainFrag == null) {
