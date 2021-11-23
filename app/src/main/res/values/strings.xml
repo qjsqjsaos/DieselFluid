@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DieselFluid</string>
+    <string name="app_name">요소수 주유소</string>
     <string name="navi_item_first">가까운 주유소</string>
     <string name="navi_tiem_second">요소수 현황</string>
     <string name="navi_item_third">지도로 보기</string>
@@ -19,4 +19,5 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="operating_time">운영 시간 :</string>
 </resources>

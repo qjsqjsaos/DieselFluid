@@ -23,6 +23,7 @@ import retrofit2.Response;
 
 public class HomeViewModel extends ViewModel {
     private MutableLiveData<ArrayList<GasStationModel>> dieseldata;
+    private MutableLiveData<GasStationModel> gasModel;
     private RetrofitAPI retrofitAPI;
     private final static String SECRET_KEY = "+VSUnLfNB7xrQXw57u4L/6IDgIBuw4DIYKm6lax8dyEwZ5WkNzj2tQR5U9a1A3J6RSW/KD40199fXwI7RLhQGg==";
 
@@ -79,7 +80,17 @@ public class HomeViewModel extends ViewModel {
                 }
             });
         }
+    }
 
+    public MutableLiveData<GasStationModel> getOneGasData() {
+        if (gasModel == null) {
+            gasModel = new MutableLiveData<>();
+        }
+        return gasModel;
+    }
 
+    public void setOneGasData(GasStationModel model) {
+        Log.d("value24", String.valueOf(model.getDetailAddress()));
+        gasModel.setValue(model);
     }
 }
