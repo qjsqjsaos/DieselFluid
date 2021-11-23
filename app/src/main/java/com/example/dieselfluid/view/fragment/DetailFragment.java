@@ -28,6 +28,15 @@ import com.example.dieselfluid.R;
 import com.example.dieselfluid.databinding.FragmentDetailBinding;
 import com.example.dieselfluid.view.activity.HomeActivity;
 import com.example.dieselfluid.viewmodel.HomeViewModel;
+import com.google.android.gms.ads.AdError;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
 import java.util.Objects;
 
@@ -40,6 +49,7 @@ public class DetailFragment extends Fragment implements HomeActivity.OnKeyBackPr
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         binding = FragmentDetailBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
@@ -50,10 +60,25 @@ public class DetailFragment extends Fragment implements HomeActivity.OnKeyBackPr
         binding = null;
     }
 
+    private void initAd() {
+        //광고 초기화
+        MobileAds.initialize(requireActivity(), new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {}
+        });
+    }
+
+    private AdRequest getAdRequest() {
+        return new AdRequest.Builder().build();
+    }
+
     @SuppressLint({"SetTextI18n", "ClickableViewAccessibility"})
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        initAd();
+        //배너광고
+        binding.adView.loadAd(getAdRequest());
 
         homeViewModel = new ViewModelProvider(requireActivity()).get(HomeViewModel.class);
         homeViewModel.getOneGasData().observe(requireActivity(), gasData -> {
@@ -105,4 +130,6 @@ public class DetailFragment extends Fragment implements HomeActivity.OnKeyBackPr
         super.onAttach(context);
         ((HomeActivity) context).setOnKeyBackPressedListener(this);
     }
+
+
 }

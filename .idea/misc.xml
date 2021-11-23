@@ -9,25 +9,22 @@
         <entry key="app/src/main/res/drawable-v24/table_cell_shape_br.xml" value="0.32083333333333336" />
         <entry key="app/src/main/res/drawable-v24/table_cell_shape_l.xml" value="0.31307456588355465" />
         <entry key="app/src/main/res/drawable-v24/table_cell_shape_lbr.xml" value="0.32083333333333336" />
+        <entry key="app/src/main/res/drawable/ic_baseline_local_gas_station_24.xml" value="0.26510416666666664" />
         <entry key="app/src/main/res/drawable/table_cell_shape.xml" value="0.10648148148148148" />
         <entry key="app/src/main/res/drawable/table_cell_shape_lb.xml" value="0.32083333333333336" />
         <entry key="app/src/main/res/layout/activity_detail.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_gas_station_fragment.xml" value="0.2462962962962963" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.2989583333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
-        <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.24895833333333334" />
         <entry key="app/src/main/res/layout/fragment_diesel_status.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_gas_station.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_main.xml" value="0.24895833333333334" />
         <entry key="app/src/main/res/layout/fragment_map.xml" value="0.1" />
         <entry key="app/src/main/res/layout/gas_station_fragment.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/main_fragment.xml" value="0.2984375" />
         <entry key="app/src/main/res/layout/recycle_list_item.xml" value="0.25" />
         <entry key="app/src/main/res/menu/bottom_navi_menu.xml" value="0.25" />
-        <entry key="app/src/main/res/mipmap-anydpi-v26/diesel_icon.xml" value="0.31875" />
-        <entry key="app/src/main/res/mipmap-anydpi-v26/diesel_icon_round.xml" value="0.31875" />
-        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.31875" />
-        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.31875" />
       </map>
     </option>
   </component>
