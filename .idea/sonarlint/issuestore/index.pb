@@ -17,13 +17,7 @@ t
 Dapp/src/main/java/com/example/dieselfluid/model/GasStationModel.java,f/7/f7b1602576901f3af2c5849d5a0a1430ac71e3ec
 ç
 ]app/src/main/java/com/example/dieselfluid/view/activity/recyclerview/OnItemClickListener.java,c/6/c6e2b89bed59aad5606d09dee641d192b0f2fb67
-@
-app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
-y
-Iapp/src/main/java/com/example/dieselfluid/view/fragment/MainFragment.java,7/7/77e7560f5fb4c5bfd714a05a95634ea3a69bf922
 é
 ^app/src/main/java/com/example/dieselfluid/view/activity/recyclerview/DieselRecycleAdapter.java,a/e/ae7723f15e8d27fbe3eeae666f78e81b6f188c5b
 v
 Fapp/src/main/java/com/example/dieselfluid/viewmodel/HomeViewModel.java,e/9/e9f1bab6c51ccebe720dbe62f00154136622b81e
-Å
-Qapp/src/main/java/com/example/dieselfluid/view/activity/HomeViewModelFactory.java,7/0/7020737dd8c497aa95bc25bdf5f5916f01ff0f98

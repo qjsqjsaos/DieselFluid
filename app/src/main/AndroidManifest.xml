@@ -17,6 +17,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
         <activity
+            android:screenOrientation="portrait"
             android:name=".view.activity.SplashActivity"
             android:exported="true">
             <intent-filter>
@@ -27,6 +28,7 @@
         </activity>
 
         <activity
+            android:screenOrientation="portrait"
             android:name=".view.activity.HomeActivity"
             android:exported="true"/>
 
