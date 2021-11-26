@@ -11,7 +11,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,6 +38,7 @@ public class MainFragment extends Fragment {
     private FragmentMainBinding binding;
     private DieselRecycleAdapter adapter;
     private int adCount = 0;
+    Handler handler = new Handler();
 
     // 광고
     private InterstitialAd mInterstitialAd;
@@ -62,6 +65,24 @@ public class MainFragment extends Fragment {
         homeViewModel = new ViewModelProvider(requireActivity()).get(HomeViewModel.class);
         initRecyclerView();
         initSearchView();
+        refreshListener();
+    }
+
+    private void refreshListener() {
+        binding.mainRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                //리프레쉬 할때 동작할 코드
+                initRecyclerView();
+
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        binding.mainRefreshLayout.setRefreshing(false);
+                    }
+                }, 2000);
+            }
+        });
     }
 
     @Override
@@ -71,7 +92,7 @@ public class MainFragment extends Fragment {
     }
 
     private void initSearchView() {
-        binding.homeSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        binding.mainSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 return false;
@@ -92,12 +113,12 @@ public class MainFragment extends Fragment {
         homeViewModel.getDieselData().observe(requireActivity(), dieselData -> {
             //로딩 구현 할것 추후에
             binding.updateDate.setText("마지막 갱신 날짜 : " + dieselData.get(0).getUpdateDate());
-            binding.homeRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(),
+            binding.mainRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(),
                     RecyclerView.VERTICAL, false)); // 상하 스크롤
             adapter.setListData(dieselData);
         });
 
-        binding.homeRecyclerView.setAdapter(adapter);
+        binding.mainRecyclerView.setAdapter(adapter);
 
         setOnItemClickListener();
     }

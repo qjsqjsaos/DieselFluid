@@ -1,135 +1,85 @@
 package com.example.dieselfluid.viewmodel.repository.api.dto;
 
-import androidx.annotation.NonNull;
+//DTO 클래스(Data Transfer Object)
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class DieselData {
-
-    @SerializedName("코드")
+public class DieselData
+{
+    @SerializedName("perPage")
     @Expose
-    private String code;
+    private String perPage;
 
-    @SerializedName("주소")
+    @SerializedName("data")
     @Expose
-    private String address;
+    private Data[] data;
 
-    @SerializedName("영업시간")
+    @SerializedName("currentCount")
     @Expose
-    private String operating_time;
+    private String currentCount;
 
-    @SerializedName("가격")
+    @SerializedName("page")
     @Expose
-    private String price;
+    private String page;
 
-    @SerializedName("명칭")
+    @SerializedName("totalCount")
     @Expose
-    private String detail_address;
+    private String totalCount;
 
-    @SerializedName("위도")
-    @Expose
-    private String latitude;
-
-    @SerializedName("재고량")
-    @Expose
-    private String diesel_stock;
-
-    @SerializedName("전화번호")
-    @Expose
-    private String phone_number;
-
-    @SerializedName("데이터기준일")
-    @Expose
-    private String update_date;
-
-    @SerializedName("경도")
-    @Expose
-    private String longitude;
-
-    public String getCode() {
-        return code;
+    public String getPerPage ()
+    {
+        return perPage;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setPerPage (String perPage)
+    {
+        this.perPage = perPage;
     }
 
-    public String getAddress() {
-        return address;
+    public Data[] getData ()
+    {
+        return data;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setData (Data[] data)
+    {
+        this.data = data;
     }
 
-    public String getOperatingTime() {
-        return operating_time;
+    public String getCurrentCount ()
+    {
+        return currentCount;
     }
 
-    public void setOperatingTime(String operatingTime) {
-        this.operating_time = operatingTime;
+    public void setCurrentCount (String currentCount)
+    {
+        this.currentCount = currentCount;
     }
 
-    public String getPrice() {
-        return price;
+    public String getPage ()
+    {
+        return page;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public void setPage (String page)
+    {
+        this.page = page;
     }
 
-    public String getDetailAddress() {
-        return detail_address;
+    public String getTotalCount ()
+    {
+        return totalCount;
     }
 
-    public void setDetailAddress(String detail_address) {
-        this.detail_address = detail_address;
+    public void setTotalCount (String totalCount)
+    {
+        this.totalCount = totalCount;
     }
 
-    public String getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(String latitude) {
-        this.latitude = latitude;
-    }
-
-    public String getDieselStock() {
-        return diesel_stock;
-    }
-
-    public void setDieselStock(String dieselStock) {
-        this.diesel_stock = dieselStock;
-    }
-
-    public String getPhoneNumber() {
-        return phone_number;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phone_number = phoneNumber;
-    }
-
-    public String getUpdateDate() {
-        return update_date;
-    }
-
-    public void setUpdateDate(String updateDate) {
-        this.update_date = updateDate;
-    }
-
-    public String getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(String longitude) {
-        this.longitude = longitude;
-    }
-
-    @NonNull
     @Override
-    public String toString() {
-        return "ClassPojo [code = " + code + ", address = " + address + ", operating_time = " + operating_time + ", price = " + price + ", detail_address = " + detail_address + ", latitude = " + latitude + ", diesel_stock = " + diesel_stock + ", phone_number = " + phone_number + ", update_date = " + update_date + ", longitude = " + longitude + "]";
+    public String toString()
+    {
+        return "ClassPojo [perPage = "+perPage+", data = "+data+", currentCount = "+currentCount+", page = "+page+", totalCount = "+totalCount+"]";
     }
 }
