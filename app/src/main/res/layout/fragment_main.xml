@@ -21,18 +21,8 @@
         android:id="@+id/main_search_view"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginBottom="10dp"
         app:iconifiedByDefault="false"
         app:queryHint="검색어를 입력하시오" />
-
-    <TextView
-        android:id="@+id/update_date"
-        android:layout_marginLeft="10dp"
-        android:textSize="18sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:text="현재 갱신 날짜 : " />
 
     <TextView
         android:layout_margin="10dp"

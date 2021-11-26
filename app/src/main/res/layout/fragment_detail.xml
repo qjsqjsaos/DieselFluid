@@ -190,6 +190,30 @@
                 android:gravity="center"
                 >
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="참고해주세요!"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="상세주소나, 연락처를 클릭하시면 복사가 됩니다."
+                    android:textSize="15sp"
+                    android:layout_marginBottom="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="지도 기능은 추후 업데이트 예정입니다."
+                    android:textSize="15sp"
+                    android:layout_marginBottom="10dp"
+                    />
+
                 <View
                     android:layout_width="0dp"
                     android:layout_height="10dp"/>

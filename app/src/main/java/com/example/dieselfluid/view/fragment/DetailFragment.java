@@ -18,7 +18,6 @@ public class DetailFragment extends Fragment implements HomeActivity.OnKeyBackPr
 
     private FragmentDetailBinding binding;
 
-
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

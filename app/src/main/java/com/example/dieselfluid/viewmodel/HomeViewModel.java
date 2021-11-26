@@ -1,13 +1,11 @@
 package com.example.dieselfluid.viewmodel;
 
 import static android.content.Context.CLIPBOARD_SERVICE;
-
 import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.os.Handler;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,8 +17,6 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewbinding.ViewBinding;
-
 import com.example.dieselfluid.databinding.FragmentDetailBinding;
 import com.example.dieselfluid.databinding.FragmentMainBinding;
 import com.example.dieselfluid.model.GasStationModel;
@@ -59,27 +55,35 @@ public class HomeViewModel extends ViewModel {
     private FragmentMainBinding mainBinding;
     private FragmentDetailBinding detailBinding;
 
-    public void setContext(
+    private void setContext(
             Context context,
             FragmentActivity fragmentActivity) {
         this.context = context;
         this.fragmentActivity = fragmentActivity;
     }
 
-    public void setFragmentMainBinding(FragmentMainBinding binding) {
+    private void setFragmentMainBinding(FragmentMainBinding binding) {
         mainBinding = binding;
     }
 
-    public void setFragmentDetailBinding(FragmentDetailBinding binding) {
+    private void setFragmentDetailBinding(FragmentDetailBinding binding) {
         detailBinding = binding;
     }
 
-    public MutableLiveData<ArrayList<GasStationModel>> getGasModelList() {
-        if (gasModelList == null) {
-            gasModelList = new MutableLiveData<>();
-            loadDieselData();
+    private MutableLiveData<ArrayList<GasStationModel>> getGasModelList(boolean isRefresh) {
+        if(isRefresh) {
+            initAndLoadData();
+        }else {
+            if (gasModelList == null) {
+                initAndLoadData();
+            }
         }
         return gasModelList;
+    }
+
+    private void initAndLoadData(){
+        gasModelList = new MutableLiveData<>();
+        loadDieselData();
     }
 
     private void loadDieselData() {
@@ -129,14 +133,14 @@ public class HomeViewModel extends ViewModel {
         }
     }
 
-    public MutableLiveData<GasStationModel> getOneGasData() {
+    private MutableLiveData<GasStationModel> getOneGasData() {
         if (oneGasModel == null) {
             oneGasModel = new MutableLiveData<>();
         }
         return oneGasModel;
     }
 
-    public void setOneGasData(GasStationModel model) {
+    private void setOneGasData(GasStationModel model) {
         oneGasModel.setValue(model);
     }
 
@@ -156,14 +160,14 @@ public class HomeViewModel extends ViewModel {
         //배너광고
         bannerAdLoad();
         //리사이클러뷰 초기화
-        initRecyclerView();
+        initRecyclerView(false);
         //서치뷰 초기화
         initSearchView();
         //새로고침 리스너
         refreshListener();
     }
 
-    public void bannerAdLoad() {
+    private void bannerAdLoad() {
         if(mainBinding != null) {
             mainBinding.adView.loadAd(getAdRequest());
         }
@@ -172,17 +176,15 @@ public class HomeViewModel extends ViewModel {
         }
     }
 
-    public void initAd() {
+    private void initAd() {
         MobileAds.initialize(context, initializationStatus -> {});
     }
 
     @SuppressLint("SetTextI18n")
-    private void initRecyclerView() {
+    private void initRecyclerView(boolean isRefresh) {
         adapter = new DieselRecycleAdapter();
 
-        getGasModelList().observe(fragmentActivity, dieselData -> {
-            //로딩 구현 할것 추후에
-            mainBinding.updateDate.setText("마지막 갱신 날짜 : " + dieselData.get(0).getUpdateDate());
+        getGasModelList(isRefresh).observe(fragmentActivity, dieselData -> {
             mainBinding.mainRecyclerView.setLayoutManager(new LinearLayoutManager(context,
                     RecyclerView.VERTICAL, false)); // 상하 스크롤
             adapter.setListData(dieselData);
@@ -193,7 +195,7 @@ public class HomeViewModel extends ViewModel {
     }
 
 
-    public void setOnItemClickListener() {
+    private void setOnItemClickListener() {
         adapter.setOnItemClickListener((holder, view, position) -> {
             setOneGasData(adapter.getItem(position));
             ((HomeActivity)fragmentActivity).replaceFragment();
@@ -220,7 +222,7 @@ public class HomeViewModel extends ViewModel {
     //리프레쉬 할때 동작할 코드
     private void refreshListener() {
         mainBinding.mainRefreshLayout.setOnRefreshListener(() -> {
-            initRecyclerView();
+            initRecyclerView(true);
             handler.postDelayed(() -> mainBinding.mainRefreshLayout.setRefreshing(false), 2000);
         });
     }
@@ -289,7 +291,7 @@ public class HomeViewModel extends ViewModel {
     /*
     * 여기서는 대부분 DetailFragment **/
     @SuppressLint("SetTextI18n")
-    public void setGasData() {
+    private void setGasData() {
         getOneGasData().observe(fragmentActivity, gasData -> {
             detailBinding.detailAddress.setText(" " + gasData.getDetailAddress());
             detailBinding.operatingTime.setText(" " + gasData.getOperatingTime());
@@ -305,7 +307,7 @@ public class HomeViewModel extends ViewModel {
         TextView bindingValue = isAddress
                 ? detailBinding.detailAddress
                 : detailBinding.phoneNumber;
-            detailBinding.addressLayout.setOnTouchListener((v, event) -> {
+                bindingValue.setOnTouchListener((v, event) -> {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) { //눌렀을 때 동작
                     copyBoard(bindingValue.getText().toString(), isAddress);
                 }
