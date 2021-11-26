@@ -1,30 +1,17 @@
 package com.example.dieselfluid.view.activity;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import android.os.Bundle;
-import android.util.Log;
-
 import com.example.dieselfluid.R;
 import com.example.dieselfluid.databinding.ActivityHomeBinding;
 import com.example.dieselfluid.view.fragment.DetailFragment;
 import com.example.dieselfluid.view.fragment.MainFragment;
-import com.google.android.gms.ads.AdError;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.FullScreenContentCallback;
-import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
 
 public class HomeActivity extends AppCompatActivity {
 
-    private ActivityHomeBinding binding;
     private Fragment mainFrag, detailFrag;
     private FragmentManager fragmentManager;
     long pressedTime = 0; //'뒤로가기' 버튼 클릭했을 때의 시간
@@ -32,7 +19,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityHomeBinding.inflate(getLayoutInflater());
+        ActivityHomeBinding binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         fragmentManager = getSupportFragmentManager();
@@ -71,7 +58,6 @@ public class HomeActivity extends AppCompatActivity {
             }
         }
     }
-
 
     public void showMainFrag() {
         if(mainFrag == null) {

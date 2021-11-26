@@ -190,22 +190,6 @@
                 android:gravity="center"
                 >
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="지속적으로 업데이트 하겠습니다."
-                    android:textSize="20sp"
-                    android:layout_marginBottom="10dp"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="감사합니다."
-                    android:textSize="20sp"
-                    android:layout_marginBottom="10dp"
-                    />
-
                 <View
                     android:layout_width="0dp"
                     android:layout_height="10dp"/>

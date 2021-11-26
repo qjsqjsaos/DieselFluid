@@ -1,21 +1,17 @@
 package com.example.dieselfluid.view.activity.recyclerview;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.dieselfluid.R;
 import com.example.dieselfluid.databinding.RecycleListItemBinding;
 import com.example.dieselfluid.model.GasStationModel;
-
 import java.util.ArrayList;
 
 public class DieselRecycleAdapter extends RecyclerView.Adapter<DieselRecycleAdapter.DieselRecycleViewHolder>
@@ -23,13 +19,10 @@ public class DieselRecycleAdapter extends RecyclerView.Adapter<DieselRecycleAdap
     private ArrayList<GasStationModel> gasStationList;
     private ArrayList<GasStationModel> gasStationListCopy;
     OnItemClickListener listener;
-    private Context context;
 
-
-    public DieselRecycleAdapter (Context context) {
+    public DieselRecycleAdapter () {
         gasStationList = new ArrayList<>();
         gasStationListCopy = new ArrayList<>();
-        this.context = context;
     }
 
     @NonNull
@@ -75,7 +68,7 @@ public class DieselRecycleAdapter extends RecyclerView.Adapter<DieselRecycleAdap
         return null;
     }
 
-    private Filter searchedFilter = new Filter() {
+    private final Filter searchedFilter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
             ArrayList<GasStationModel> filteredList = new ArrayList<>();
@@ -95,10 +88,12 @@ public class DieselRecycleAdapter extends RecyclerView.Adapter<DieselRecycleAdap
             return results;
         }
         @SuppressLint("NotifyDataSetChanged")
+        @SuppressWarnings("unchecked")
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
             Log.d("gasStationList1", String.valueOf(gasStationList));
             gasStationList.clear();
+
             gasStationList.addAll((ArrayList<GasStationModel>) results.values);
             notifyDataSetChanged();
         }
@@ -110,18 +105,15 @@ public class DieselRecycleAdapter extends RecyclerView.Adapter<DieselRecycleAdap
 
     public class DieselRecycleViewHolder extends RecyclerView.ViewHolder {
 
-        private RecycleListItemBinding binding;
+        private final RecycleListItemBinding binding;
 
         public DieselRecycleViewHolder(@NonNull View itemView) {
             super(itemView);
             binding = RecycleListItemBinding.bind(itemView);
-            binding.cardItem.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int position = getAdapterPosition();
-                    if(listener != null) {
-                        listener.onItemClick(DieselRecycleViewHolder.this, v, position);
-                    }
+            binding.cardItem.setOnClickListener(v -> {
+                int position = getAdapterPosition();
+                if(listener != null) {
+                    listener.onItemClick(DieselRecycleViewHolder.this, v, position);
                 }
             });
         }
