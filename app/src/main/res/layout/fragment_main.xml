@@ -2,6 +2,7 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -9,13 +10,14 @@
 
     <View
         android:layout_width="0dp"
-        android:layout_height="10dp"/>
+        android:layout_height="10dp" />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_gravity="center"
-        android:background="@drawable/app_banner_icon" />
+        android:background="@drawable/app_banner_icon"
+        tools:ignore="ContentDescription" />
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/main_search_view"
@@ -25,15 +27,15 @@
         app:queryHint="검색어를 입력하시오" />
 
     <TextView
-        android:layout_margin="10dp"
-        android:textSize="16sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="5분에 한 번씩 갱신됩니다. \n스크롤을 통해 새로고침 해주세요." />
+        android:layout_margin="10dp"
+        android:text="@string/main_guide"
+        android:textSize="16sp" />
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent">
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/main_refresh_layout"
@@ -49,21 +51,14 @@
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
-        <com.google.android.gms.ads.AdView
-            xmlns:ads="http://schemas.android.com/apk/res-auto"
+        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
             android:id="@+id/adView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
             ads:adSize="BANNER"
-            ads:adUnitId="ca-app-pub-7522479314167243/9958000125">
-        </com.google.android.gms.ads.AdView>
+            ads:adUnitId="ca-app-pub-7522479314167243/9958000125" />
 
     </FrameLayout>
-
-
-
 
 </LinearLayout>

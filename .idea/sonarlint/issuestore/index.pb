@@ -17,5 +17,3 @@ Dapp/src/main/java/com/example/dieselfluid/model/GasStationModel.java,f/7/f7b16
 ]app/src/main/java/com/example/dieselfluid/view/activity/recyclerview/OnItemClickListener.java,c/6/c6e2b89bed59aad5606d09dee641d192b0f2fb67
 Ž
 ^app/src/main/java/com/example/dieselfluid/view/activity/recyclerview/DieselRecycleAdapter.java,a/e/ae7723f15e8d27fbe3eeae666f78e81b6f188c5b
-v
-Fapp/src/main/java/com/example/dieselfluid/viewmodel/HomeViewModel.java,e/9/e9f1bab6c51ccebe720dbe62f00154136622b81e

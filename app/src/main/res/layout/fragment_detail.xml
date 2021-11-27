@@ -4,26 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:layout_weight="10"
+    android:orientation="vertical"
     tools:ignore="UselessParent">
 
     <ScrollView
-        android:fillViewport="true"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="9"
+        android:fillViewport="true"
         tools:ignore="ScrollViewCount">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            >
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:background="@drawable/ready_image" />
+                android:background="@drawable/ready_image"
+                tools:ignore="ContentDescription" />
 
             <LinearLayout
                 android:id="@+id/address_layout"
@@ -41,10 +42,10 @@
                     android:textSize="@dimen/detail_title_size" />
 
                 <TextView
-                    android:gravity="center_vertical"
                     android:id="@+id/detail_address"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="center_vertical"
                     android:text="@string/temporary_detail_address"
                     android:textSize="@dimen/detail_description_size" />
 
@@ -62,13 +63,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="@string/operating_time"
-                    android:textSize="@dimen/detail_title_size"  />
+                    android:textSize="@dimen/detail_title_size" />
 
                 <TextView
-                    android:gravity="center_vertical"
                     android:id="@+id/operating_time"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="center_vertical"
                     android:textSize="@dimen/detail_description_size" />
             </LinearLayout>
 
@@ -84,15 +85,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="연락처 :"
-                    android:textSize="@dimen/detail_title_size"/>
+                    android:text="@string/phone_number"
+                    android:textSize="@dimen/detail_title_size" />
 
                 <TextView
-                    android:gravity="center_vertical"
                     android:id="@+id/phone_number"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textSize="@dimen/detail_description_size"/>
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/detail_description_size" />
 
             </LinearLayout>
 
@@ -107,15 +108,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="갱신 날짜 :"
+                    android:text="@string/update_date"
                     android:textSize="@dimen/detail_title_size" />
 
                 <TextView
-                    android:gravity="center_vertical"
                     android:id="@+id/update_date"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textSize="@dimen/detail_description_size"/>
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/detail_description_size" />
             </LinearLayout>
 
             <TableLayout
@@ -185,38 +186,40 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
-                >
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="참고해주세요!"
-                    android:textSize="20sp"
                     android:layout_marginBottom="10dp"
-                    />
+                    android:text="@string/please_note"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="상세주소나, 연락처를 클릭하시면 복사가 됩니다."
-                    android:textSize="15sp"
-                    android:layout_marginBottom="10dp"
-                    />
+                    android:gravity="center"
+                    android:text="@string/skill_guide"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="지도 기능은 추후 업데이트 예정입니다."
-                    android:textSize="15sp"
-                    android:layout_marginBottom="10dp"
-                    />
+                    android:padding="20dp"
+                    android:text="@string/situation_information"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/source"
+                    android:textSize="15sp" />
 
                 <View
                     android:layout_width="0dp"
-                    android:layout_height="10dp"/>
+                    android:layout_height="10dp" />
 
             </LinearLayout>
 
@@ -224,17 +227,13 @@
 
     </ScrollView>
 
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-7522479314167243/9958000125">
-    </com.google.android.gms.ads.AdView>
+        ads:adUnitId="ca-app-pub-7522479314167243/9958000125" />
 
 
 </LinearLayout>
