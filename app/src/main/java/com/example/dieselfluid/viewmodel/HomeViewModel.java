@@ -222,8 +222,12 @@ public class HomeViewModel extends ViewModel {
     //리프레쉬 할때 동작할 코드
     private void refreshListener() {
         mainBinding.mainRefreshLayout.setOnRefreshListener(() -> {
-            initRecyclerView(true);
+            //임시로 검색창에 글씨가 있을 때 새로고침 하는 척 보여주기.. 이거는 추후에 고칠것
             handler.postDelayed(() -> mainBinding.mainRefreshLayout.setRefreshing(false), 2000);
+            if(mainBinding.mainSearchView.getQuery().length() > 0) {
+                return;
+            }
+            initRecyclerView(true);
         });
     }
 
