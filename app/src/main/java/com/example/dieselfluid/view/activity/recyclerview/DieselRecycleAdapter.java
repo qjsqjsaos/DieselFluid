@@ -121,8 +121,8 @@ public class DieselRecycleAdapter extends RecyclerView.Adapter<DieselRecycleAdap
         @SuppressLint("SetTextI18n")
         void bindItem(GasStationModel gasModel){
             binding.cardTitle.setText(" "  + gasModel.getDetailAddress()); //상세 주소 넣어주기
-            binding.dieselStock.setText(gasModel.getDieselStock()); //요소수 재고 값 넣어주기
-            binding.price.setText(gasModel.getPrice() + "원"); //가격 넣어주기
+            binding.dieselStock.setText(gasModel.getDieselStock() + "L"); //요소수 재고 값 넣어주기
+            binding.price.setText((gasModel.getPrice() != null ? gasModel.getPrice() : "0") + "원"); //가격 넣어주기
             binding.location.setText(gasModel.getLocation()); //위치 넣어주기
         }
     }

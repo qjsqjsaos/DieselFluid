@@ -4,11 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.24074074074074073" />
+        <entry key="app/src/main/res/drawable-v23/app_icon_splash.xml" value="0.30364583333333334" />
         <entry key="app/src/main/res/drawable-v24/table_cell_shape_a.xml" value="0.32083333333333336" />
         <entry key="app/src/main/res/drawable-v24/table_cell_shape_b.xml" value="0.31307456588355465" />
         <entry key="app/src/main/res/drawable-v24/table_cell_shape_br.xml" value="0.32083333333333336" />
         <entry key="app/src/main/res/drawable-v24/table_cell_shape_l.xml" value="0.31307456588355465" />
         <entry key="app/src/main/res/drawable-v24/table_cell_shape_lbr.xml" value="0.32083333333333336" />
+        <entry key="app/src/main/res/drawable/app_icon.xml" value="0.28489583333333335" />
         <entry key="app/src/main/res/drawable/ic_baseline_local_gas_station_24.xml" value="0.26510416666666664" />
         <entry key="app/src/main/res/drawable/table_cell_shape.xml" value="0.10648148148148148" />
         <entry key="app/src/main/res/drawable/table_cell_shape_lb.xml" value="0.32083333333333336" />

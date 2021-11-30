@@ -301,8 +301,8 @@ public class HomeViewModel extends ViewModel {
             detailBinding.operatingTime.setText(" " + gasData.getOperatingTime());
             detailBinding.phoneNumber.setText(" " + gasData.getPhoneNumber());
             detailBinding.updateDate.setText(" " + gasData.getUpdateDate());
-            detailBinding.dieselStock.setText(gasData.getDieselStock());
-            detailBinding.price.setText(gasData.getPrice());
+            detailBinding.dieselStock.setText(gasData.getDieselStock() + "L");
+            detailBinding.price.setText((gasData.getPrice().isEmpty() || gasData.getPrice() == null ? "0" : gasData.getPrice()) + "원");
         });
     }
 

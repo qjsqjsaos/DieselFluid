@@ -22,4 +22,9 @@
     </style>
     <style name="Theme.DieselFluid.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.DieselFluid.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/app_icon_splash</item>
+        <item name="android:width">20dp</item>
+        <item name="android:height">20dp</item>
+    </style>
 </resources>
